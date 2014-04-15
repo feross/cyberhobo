@@ -2,7 +2,7 @@
 
 #### Offline `git push` and `npm publish` for cyberhobos
 
-![all aspiring cyberhobos seek to follow the ways of the dominictarr](img.jpg)
+![all aspiring cyberhobos seek to follow the ways of the dominictarr](https://raw.githubusercontent.com/feross/zelda/master/img.jpg)
 
 This module is gifted to cyberhobo extraordinaire, dominictarr.
 
