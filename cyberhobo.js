@@ -62,55 +62,55 @@ series.waterfall([
 
   // Check writeahead log for commands to run
   function (online, cb) {
-    if (online) {
-      var entries
-      try {
-        entries = fs.readdirSync(DATA_DIR)
-      } catch (err) {
-        cb(new Error('Could not read from ~/.cyberhobo'))
-      }
-
-      entries.sort()
-
-      var fns = []
-
-      if (entries.length) {
-        console.log('============================================================')
-        console.log('               HEY, YOU HAVE INTERNET NOW!')
-        console.log('Time to re-run the commands you saved while you were offline')
-        console.log('============================================================')
-      }
-
-      entries.forEach(function (entry) {
-        var filename = path.join(DATA_DIR, entry)
-        try {
-          var data = JSON.parse(fs.readFileSync(filename, 'utf8'))
-        } catch (err) {
-          console.error('ERROR: Invalid data in ' + filename)
-        }
-
-        fns.push(function (cb) {
-          console.log('')
-          console.log('==== ' + chalk.bold.green('Running ') + chalk.red(data.command.join(' ')) + chalk.green(' in ' + data.cwd) + ' ====')
-          console.log('')
-          run(data.command, data.cwd, cb)
-          try {
-            fs.unlinkSync(filename)
-          } catch (err) {
-            console.error('ERROR: Could not remove cyberhobo file: ' + filename)
-          }
-        })
-      })
-
-      series(fns, function (err) {
-        if (entries.length) {
-          console.log('CYBER HOBO MISSION COMPLETE: all up to date')
-        }
-        cb(err, online)
-      })
-    } else {
-      cb(null, online)
+    if (!online) {
+      return cb(null, online)
     }
+
+    var entries
+    try {
+      entries = fs.readdirSync(DATA_DIR)
+    } catch (err) {
+      cb(new Error('Could not read from ~/.cyberhobo'))
+    }
+
+    entries.sort()
+
+    var fns = []
+
+    if (entries.length) {
+      console.log('============================================================')
+      console.log('               HEY, YOU HAVE INTERNET NOW!')
+      console.log('Time to re-run the commands you saved while you were offline')
+      console.log('============================================================')
+    }
+
+    entries.forEach(function (entry) {
+      var filename = path.join(DATA_DIR, entry)
+      try {
+        var data = JSON.parse(fs.readFileSync(filename, 'utf8'))
+      } catch (err) {
+        console.error('ERROR: Invalid data in ' + filename)
+      }
+
+      fns.push(function (cb) {
+        console.log('')
+        console.log('==== ' + chalk.bold.green('Running ') + chalk.red(data.command.join(' ')) + chalk.green(' in ' + data.cwd) + ' ====')
+        console.log('')
+        run(data.command, data.cwd, cb)
+        try {
+          fs.unlinkSync(filename)
+        } catch (err) {
+          console.error('ERROR: Could not remove cyberhobo file: ' + filename)
+        }
+      })
+    })
+
+    series(fns, function (err) {
+      if (entries.length) {
+        console.log('CYBER HOBO MISSION COMPLETE: all up to date')
+      }
+      cb(err, online)
+    })
   },
 
   // Run the command, or save it for later
