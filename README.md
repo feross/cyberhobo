@@ -33,8 +33,8 @@ This module is gifted to cyberhobo extraordinaire, dominictarr.
   #### when you're back online
 
   If you're back in civilization and you have an internet connection, the next time you run
-  any `git` or `npm` command, `cyberhobo` will realize this and run all the commands that
-  were queued up while you were offline. They will run **in order**.
+  any `git` or `npm` command, `cyberhobo` will run all the commands that were queued up
+  while you were offline. They will run **in order**.
 
   If any of them fails with a non-zero exit code then `cyberhobo` bails, printing out the remaining
   commands so you can run them manually. (TODO)
