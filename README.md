@@ -1,4 +1,4 @@
-# cyberhobo [![npm](https://img.shields.io/npm/v/cyberhobo.svg)](https://npmjs.org/package/cyberhobo) [![npm](https://img.shields.io/npm/dm/cyberhobo.svg)](https://npmjs.org/package/cyberhobo)
+# cyberhobo [![npm](https://img.shields.io/npm/v/cyberhobo.svg)](https://npmjs.org/package/cyberhobo)
 
 #### Offline `git push` and `npm publish` for cyberhobos
 
