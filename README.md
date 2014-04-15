@@ -37,7 +37,7 @@ This module is gifted to cyberhobo extraordinaire, dominictarr.
   were queued up while you were offline. They will run **in order**.
 
   If any of them fails with a non-zero exit code then `cyberhobo` bails, printing out the remaining
-  commands so you can run them manually.
+  commands so you can run them manually. (TODO)
 
 ### example
 
