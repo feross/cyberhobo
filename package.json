@@ -1,0 +1,43 @@
+{
+  "name": "cyberhobo",
+  "description": "Offline `git push` and `npm publish` for cyberhobos",
+  "version": "0.0.0",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "http://feross.org/"
+  },
+  "bin": {
+    "cyberhobo": "./cyberhobo.js"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/cyberhobo/issues"
+  },
+  "dependencies": {
+    "chalk": "^0.4.0",
+    "connectivity": "^0.1.1",
+    "mkdirp": "^0.3.5",
+    "once": "^1.3.0",
+    "run-series": "^0.3.1"
+  },
+  "homepage": "https://github.com/feross/cyberhobo/",
+  "keywords": [
+    "git push",
+    "npm publish",
+    "offline",
+    "git",
+    "npm",
+    "cyberhobo",
+    "mad science"
+  ],
+  "license": "MIT",
+  "main": "cyberhobo.js",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/cyberhobo.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
