@@ -8,6 +8,7 @@ var mkdirp = require('mkdirp')
 var once = require('once')
 var path = require('path')
 var series = require('run-series')
+var waterfall = require('run-waterfall')
 
 var COMMANDS = {
   git: ['push'],
@@ -37,11 +38,9 @@ function run (argv, cwd, cb) {
   child.on('error', cb)
 }
 
-
 var argv = process.argv.slice(2)
 
-series.waterfall([
-
+waterfall([
   // Ensure that the data folder exists
   function (cb) {
     mkdirp(DATA_DIR, function (err) {
