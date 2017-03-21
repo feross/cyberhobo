@@ -1,4 +1,13 @@
-# cyberhobo [![npm](https://img.shields.io/npm/v/cyberhobo.svg)](https://npmjs.org/package/cyberhobo)
+# cyberhobo [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
+
+[travis-image]: https://img.shields.io/travis/feross/cyberhobo/master.svg
+[travis-url]: https://travis-ci.org/feross/cyberhobo
+[npm-image]: https://img.shields.io/npm/v/cyberhobo.svg
+[npm-url]: https://npmjs.org/package/cyberhobo
+[downloads-image]: https://img.shields.io/npm/dm/cyberhobo.svg
+[downloads-url]: https://npmjs.org/package/cyberhobo
+[standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
+[standard-url]: https://standardjs.com
 
 #### Offline `git push` and `npm publish` for cyberhobos
 
