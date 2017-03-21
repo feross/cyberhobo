@@ -134,7 +134,6 @@ waterfall([
         console.error('WARNING: Could not write to ~/.cyberhobo/ -- running command now')
         run(argv)
       }
-
     } else {
       // we're online or this is a command we don't know about -- run the command now
       run(argv)

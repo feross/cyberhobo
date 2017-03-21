@@ -39,6 +39,9 @@
     "url": "git://github.com/feross/cyberhobo.git"
   },
   "scripts": {
-    "test": "echo \"No tests\" && exit 0"
+    "test": "standard"
+  },
+  "devDependencies": {
+    "standard": "^9.0.2"
   }
 }
