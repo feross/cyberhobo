@@ -42,6 +42,6 @@
     "test": "standard"
   },
   "devDependencies": {
-    "standard": "*"
+    "standard": ">=14.3.4"
   }
 }
