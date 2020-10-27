@@ -1,3 +1,4 @@
+/*! cyberhobo. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 var chalk = require('chalk')
 var connectivity = require('connectivity')
 var cp = require('child_process')
