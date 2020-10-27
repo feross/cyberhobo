@@ -2,7 +2,6 @@ var chalk = require('chalk')
 var connectivity = require('connectivity')
 var cp = require('child_process')
 var fs = require('fs')
-var mkdirp = require('mkdirp')
 var once = require('once')
 var path = require('path')
 var series = require('run-series')
@@ -40,7 +39,7 @@ function cyberhobo (argv) {
   waterfall([
     // Ensure that the data folder exists
     function (cb) {
-      mkdirp(DATA_DIR, function (err) {
+      fs.mkdir(DATA_DIR, { recursive: true }, function (err) {
         if (err) {
           console.error('WARNING: Could not create ~/.cyberhobo folder')
           run(argv) // let the command run
